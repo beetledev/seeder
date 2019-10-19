@@ -121,7 +121,7 @@ public:
   }
 
   const char * IsGoodReason() const {
-    //if (ip.GetPort() != GetDefaultPort()) return "Invalid port";
+    if (ip.GetPort() != GetDefaultPort()) return "Invalid port";
     if (!(services & NODE_NETWORK)) return "Isn't a node";
     if (!ip.IsRoutable()) return "Isn't routable";
     if (clientVersion && clientVersion < REQUIRE_VERSION) return "Invalid version";
